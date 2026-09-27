@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SIGMA 18-50mm F2.8 — Exploded View</title>
+  <style>
+    :root{--bg:#090d12;--panel:#10171d;--panel2:#141e25;--line:#27353d;--text:#eef3f3;--soft:#9eafb7;--muted:#70818b;--gold:#d8ac76;--gold2:#f0cf9f;--aqua:#95dbe0;--violet:#9bb3f0}
+    *{box-sizing:border-box}
+    [hidden]{display:none!important}
+    html{background:var(--bg)}
+    body{margin:0;min-width:320px;background:radial-gradient(circle at 17% -10%,#183039 0,transparent 33%),radial-gradient(circle at 86% 24%,#17242e 0,transparent 33%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;letter-spacing:.015em}
+    button,input{font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+    a{color:var(--gold2);text-underline-offset:4px}
+    #lens-app{max-width:1600px;margin:auto;padding:22px 30px 26px}
+    .topbar{display:flex;align-items:center;gap:20px;padding-bottom:21px;border-bottom:1px solid #243139}
+    .brand{width:112px;flex:none;letter-spacing:.21em;font-size:20px;font-weight:800;color:#f5f3ed;line-height:1}
+    .brand span{display:block;margin-top:8px;font-size:8px;font-weight:600;letter-spacing:.24em;color:var(--soft)}
+    .titleblock{border-left:1px solid #39505a;padding-left:20px;min-width:0;flex:1}
+    .eyebrow,.tiny-label{font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+    h1{margin:6px 0 0;font-size:clamp(23px,3vw,34px);font-weight:650;line-height:1.22;letter-spacing:-.028em}
+    h1 .sub{font-size:.52em;letter-spacing:.04em;font-weight:500;color:var(--soft);white-space:nowrap}
+    .header-chips{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .chip{padding:8px 10px;border:1px solid #3a4c55;color:#d0dde0;background:#15222a;font-size:10px;font-weight:700;letter-spacing:.14em;white-space:nowrap}
+    .chip.gold{border-color:#665135;background:#2a231b;color:var(--gold2)}
+    .workbench{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:0;margin-top:20px;min-height:650px;border:1px solid #2a3942;background:#0d141a;box-shadow:0 24px 76px rgba(0,0,0,.3)}
+    .stage{position:relative;min-width:0;min-height:650px;overflow:hidden;background:radial-gradient(ellipse at 50% 47%,rgba(43,71,76,.35) 0,rgba(17,31,39,.15) 37%,transparent 70%),linear-gradient(#0f171d,#0b1116)}
+    .stage:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.42;background-image:linear-gradient(rgba(149,189,197,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(149,189,197,.065) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse at center,#000 12%,transparent 80%)}
+    .stage:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 120px rgba(3,7,10,.64)}
+    #viewport{position:absolute;inset:0;z-index:1}
+    #lens-canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+    #lens-canvas:active{cursor:grabbing}
+    .stage-top{position:absolute;left:27px;right:27px;top:23px;z-index:3;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;pointer-events:none}
+    .stage-heading{display:flex;gap:11px;align-items:center;font-size:10px;font-weight:700;letter-spacing:.21em;color:#d3e2e5}
+    .live-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 16px var(--gold)}
+    .stage-count{color:#8aa0aa;font-size:10px;letter-spacing:.18em;text-align:right}
+    .stage-bottom{position:absolute;left:25px;right:25px;bottom:20px;z-index:3;display:flex;justify-content:space-between;align-items:flex-end;pointer-events:none;gap:12px}
+    .stage-bottom .orientation{font-size:10px;line-height:1.75;letter-spacing:.12em;color:#9eb1b8}
+    .stage-bottom strong{display:block;color:#e6eeee;font-size:11px;font-weight:650;letter-spacing:.08em}
+    .axis-note{color:#8da2a9;font-size:10px;letter-spacing:.12em;white-space:nowrap}
+    .selected-annotation{position:absolute;z-index:3;transform:translate(-50%,-145%);pointer-events:none;display:flex;align-items:center;gap:8px;white-space:nowrap;padding:8px 10px;background:rgba(13,22,28,.9);border:1px solid rgba(211,171,112,.72);color:#fff4e6;font-size:11px;letter-spacing:.05em;box-shadow:0 12px 32px #0009}
+    .selected-annotation:after{content:"";position:absolute;left:50%;top:100%;height:25px;width:1px;background:var(--gold)}
+    .selected-annotation .point{width:6px;height:6px;background:var(--gold);border-radius:50%}
+    .inspector{display:flex;flex-direction:column;border-left:1px solid #2b3b43;background:linear-gradient(150deg,#16222a,#101920 38%,#0e161b);min-width:0}
+    .inspector-head{padding:26px 24px 20px;border-bottom:1px solid #2a3b44}
+    .inspector-head .tiny-label{color:#b1c4ca}
+    .inspector-head h2{font-size:20px;line-height:1.3;margin:11px 0 0;letter-spacing:-.02em;font-weight:650}
+    .inspector-hero{padding:25px 24px 23px;min-height:228px;border-bottom:1px solid #293942}
+    .detail-kicker{font-size:10px;letter-spacing:.21em;font-weight:700;color:var(--gold)}
+    .detail-title{font-size:20px;letter-spacing:-.03em;font-weight:650;line-height:1.4;margin:11px 0 10px}
+    .detail-body{color:#b4c4cb;font-size:12px;line-height:1.85;margin:0}
+    .detail-meta{display:inline-block;margin-top:17px;padding:7px 9px;background:#22333a;color:#d1e0e0;font-size:10px;letter-spacing:.08em}
+    .part-list{padding:21px 24px 6px;flex:1}
+    .part-list .tiny-label{display:block;margin-bottom:13px;color:#9cadb5}
+    .part-button{width:100%;border:0;border-top:1px solid #24343b;background:transparent;padding:12px 0;text-align:left;color:#a5b8bf;display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:12px;transition:color .18s,transform .18s}
+    .part-button:last-child{border-bottom:1px solid #24343b}
+    .part-button span:last-child{font-size:10px;color:#69818b;letter-spacing:.08em}
+    .part-button:hover,.part-button[aria-pressed="true"]{color:#fff0dc;transform:translateX(3px)}
+    .part-button[aria-pressed="true"] span:last-child{color:var(--gold)}
+    .inspector-foot{padding:18px 24px 20px;border-top:1px solid #293942;color:#91a6ae;font-size:10px;line-height:1.7}
+    .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid #2a3942;border-top:0;background:#111a20}
+    .control-block{padding:19px 22px 20px;min-width:0}
+    .control-block:nth-child(even){border-left:1px solid #2a3942}
+    .control-block:nth-child(n+3){border-top:1px solid #2a3942}
+    .control-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px;font-size:10px;color:#9baeb6;letter-spacing:.14em;font-weight:700}
+    .control-head strong{color:#f1d1a4;font-size:12px;letter-spacing:.05em}
+    input[type="range"]{width:100%;appearance:none;background:linear-gradient(90deg,var(--gold) 0 0%,#304149 0% 100%);height:3px;vertical-align:middle}
+    input[type="range"]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;border:3px solid #efd4b0;background:#9d7044;border-radius:50%;box-shadow:0 0 0 4px #af7d422b}
+    input[type="range"]::-moz-range-thumb{width:12px;height:12px;border:3px solid #efd4b0;background:#9d7044;border-radius:50%}
+    .scale{display:flex;justify-content:space-between;margin-top:12px;color:#718691;font-size:10px;letter-spacing:.08em}
+    .focal-scale{position:relative;height:14px;margin-top:11px;color:#718691;font-size:10px;letter-spacing:.05em}
+    .focal-scale span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+    .focal-scale span:first-child{transform:none}
+    .focal-scale span:last-child{transform:translateX(-100%)}
+    .motion-note{margin-top:7px;color:#91a6ae;font-size:10px;letter-spacing:.04em}
+    .aperture-layout{display:flex;gap:17px;align-items:center}
+    .aperture-range{min-width:0;flex:1}
+    .aperture-preview{width:76px;height:76px;flex:none;border:1px solid #35454c;border-radius:50%;background:#0a1115;box-shadow:0 0 22px #02060788}
+    .aperture-note{margin-top:8px;color:#91a6ae;font-size:10px;letter-spacing:.04em}
+    .toggle-row{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+    .toggle,.utility-button{border:1px solid #31424a;background:#18242b;color:#a9bbc2;min-height:34px;padding:7px 11px;font-size:11px;font-weight:650;transition:background .18s,border-color .18s,color .18s}
+    .toggle:hover,.utility-button:hover{background:#263943;color:#fff}
+    .toggle[aria-pressed="true"]{background:#433525;border-color:#9d784a;color:#ffe7bf}
+    .toggles{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .toggles .toggle-row{flex:1}
+    .toggle{padding:7px 9px}
+    .utility-button{white-space:nowrap}
+    .lower{display:flex;gap:18px;align-items:flex-start;justify-content:space-between;margin-top:18px;padding:0 1px;color:#82969e;font-size:11px;line-height:1.65}
+    .legend{display:flex;gap:16px;flex-wrap:wrap}
+    .legend-item{display:flex;align-items:center;gap:7px;white-space:nowrap}
+    .swatch{width:9px;height:9px;border-radius:50%;background:var(--aqua);box-shadow:0 0 11px currentColor;color:var(--aqua)}
+    .swatch.asph{background:var(--gold);color:var(--gold)}
+    .swatch.sld{background:var(--violet);color:var(--violet)}
+    .source-note{text-align:right;max-width:650px}
+    .source-note a{white-space:nowrap}
+    @media(max-width:1100px){.workbench{grid-template-columns:minmax(0,1fr) 285px}.inspector-head,.inspector-hero,.part-list,.inspector-foot{padding-left:18px;padding-right:18px}.toggles{align-items:center}}
+    @media(max-width:800px){#lens-app{padding:14px}.topbar{gap:11px;flex-wrap:wrap}.brand{width:90px;font-size:17px}.titleblock{padding-left:12px}.header-chips{width:100%;justify-content:flex-start;padding-left:103px}.workbench{display:flex;flex-direction:column}.stage{min-height:510px}.inspector{border-left:0;border-top:1px solid #2a3942}.inspector-head{padding-bottom:13px}.inspector-hero{min-height:0}.part-list{padding-bottom:16px}.part-list .buttons{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.inspector-foot{padding:14px 18px}.lower{flex-direction:column}.source-note{text-align:left}}
+    @media(max-width:540px){h1{font-size:22px}h1 .sub{display:block;margin-top:4px;font-size:11px}.stage{min-height:420px}.stage-top{left:14px;right:14px;top:15px}.stage-bottom{left:14px;right:14px;bottom:14px}.stage-count{display:none}.inspector-head h2{font-size:18px}.part-list .buttons{grid-template-columns:1fr}.controls{display:flex;flex-direction:column}.control-block{padding:16px}.control-block:nth-child(even){border-left:0}.control-block:nth-child(n+2){border-top:1px solid #2a3942}.lower{gap:12px}.header-chips{padding-left:0}.chip{font-size:9px}.axis-note{display:none}}
+  </style>
+</head>
+<body>
+<main id="lens-app">
+  <header class="topbar">
+    <div class="brand" aria-label="SIGMA">SIGMA<span>IMAGING ENGINEERING</span></div>
+    <div class="titleblock">
+      <div class="eyebrow">INTERACTIVE OPTICAL EXPLORER <span aria-hidden="true">/</span> 01</div>
+      <h1>18–50mm F2.8 <span class="sub">DC DN | Contemporary</span></h1>
+    </div>
+    <div class="header-chips"><span class="chip gold">FUJIFILM X MOUNT</span><span class="chip">APS-C</span><span class="chip">CONCEPT MODEL</span></div>
+  </header>
+
+  <section class="workbench" aria-label="レンズの分解3Dビューと部品説明">
+    <div class="stage" aria-label="3Dレンズモデル。ドラッグで回転、ホイールで拡大できます">
+      <div id="viewport"><canvas id="lens-canvas" aria-label="SIGMA 18-50mm F2.8の立体的な分解モデル"></canvas></div>
+      <div class="stage-top"><div class="stage-heading"><span class="live-dot"></span><span id="stage-label">PRODUCT VIEW</span></div><div class="stage-count" id="stage-count">SIGMA · 18–50mm F2.8 DC DN · X MOUNT</div></div>
+      <div class="stage-bottom"><div class="orientation"><strong>ドラッグで回転 · スクロールで拡大</strong>部品をクリックすると詳しい説明を表示</div><div class="axis-note">OBJECT SIDE ↔ CAMERA SIDE</div></div>
+      <div id="selected-annotation" class="selected-annotation" hidden><span class="point"></span><span id="annotation-name"></span></div>
+    </div>
+
+    <aside class="inspector" aria-label="選択した部品の情報">
+      <div class="inspector-head"><span class="tiny-label">COMPONENT INSPECTOR</span><h2 id="selected-label">光学系と機構の全体像</h2></div>
+      <div class="inspector-hero" aria-live="polite"><div class="detail-kicker" id="detail-kicker"></div><h3 class="detail-title" id="detail-title"></h3><p class="detail-body" id="detail-body"></p><div class="detail-meta" id="detail-meta"></div></div>
+      <div class="part-list"><span class="tiny-label">主要コンポーネント</span><div class="buttons">
+        <button class="part-button" data-part="hood" aria-pressed="false" type="button"><span>花形フード</span><span>01</span></button>
+        <button class="part-button" data-part="front-barrel" aria-pressed="false" type="button"><span>前側鏡筒</span><span>02</span></button>
+        <button class="part-button" data-part="zoom-ring" aria-pressed="false" type="button"><span>ズームリング</span><span>03</span></button>
+        <button class="part-button" data-part="fixed-body" aria-pressed="false" type="button"><span>銘板と固定筒</span><span>04</span></button>
+        <button class="part-button" data-part="focus-ring" aria-pressed="false" type="button"><span>フォーカスリング</span><span>05</span></button>
+        <button class="part-button" data-part="iris" aria-pressed="false" type="button"><span>7枚羽根の絞り</span><span>06</span></button>
+        <button class="part-button" data-part="motor" aria-pressed="false" type="button"><span>AF駆動部</span><span>07</span></button>
+        <button class="part-button" data-part="mount" aria-pressed="false" type="button"><span>Xマウント</span><span>08</span></button>
+      </div></div>
+      <div class="inspector-foot">外装は公式の製品写真、光学系は公式断面図を参照。鏡筒内部のカム、接点形状、駆動部は模式的な表現です。</div>
+    </aside>
+  </section>
+
+  <section class="controls" aria-label="3Dビューの操作">
+    <div class="control-block"><div class="control-head"><label for="explode-slider">分解距離</label><strong id="explode-value">0%</strong></div><input id="explode-slider" type="range" min="0" max="100" value="0" aria-label="分解距離"><div class="scale"><span>ASSEMBLED</span><span>EXPLODED</span></div></div>
+    <div class="control-block"><div class="control-head"><label for="focal-slider">焦点距離</label><strong id="focal-readout">18 mm</strong></div><input id="focal-slider" type="range" min="18" max="50" step="1" value="18" aria-label="焦点距離" aria-valuetext="18 mm"><div class="focal-scale" aria-hidden="true"><span style="left:0%">18</span><span style="left:18.75%">24</span><span style="left:31.25%">28</span><span style="left:53.125%">35</span><span style="left:100%">50 mm</span></div><div class="motion-note">↻ ズームリング回転　 ↔ 前側鏡筒の繰り出し</div></div>
+    <div class="control-block"><div class="control-head"><label for="aperture-slider">絞り値</label><strong id="aperture-readout">F2.8</strong></div><div class="aperture-layout"><div class="aperture-range"><input id="aperture-slider" type="range" min="0" max="18" step="1" value="0" aria-label="絞り値" aria-valuetext="F2.8"><div class="focal-scale" aria-hidden="true"><span style="left:0%">F2.8</span><span style="left:33.333%">F5.6</span><span style="left:66.667%">F11</span><span style="left:100%">F22</span></div><div class="aperture-note">7枚の羽根 · 1/3段相当の表示</div></div><canvas id="aperture-preview" class="aperture-preview" width="152" height="152" aria-hidden="true"></canvas></div></div>
+    <div class="control-block"><div class="control-head"><span>表示レイヤー</span><span>VIEW OPTIONS</span></div><div class="toggles"><div class="toggle-row" role="group" aria-label="レイヤー切り替え"><button class="toggle" type="button" data-layer="shell" aria-pressed="true">外装</button><button class="toggle" type="button" data-layer="optics" aria-pressed="true">光学系</button><button class="toggle" type="button" data-layer="mechanics" aria-pressed="true">機構</button></div><div class="toggle-row"><button class="utility-button" id="rotate-toggle" type="button" aria-pressed="false">自動回転</button><button class="utility-button" id="reset-view" type="button">視点を戻す</button></div></div></div>
+  </section>
+
+  <footer class="lower"><div class="legend" aria-label="レンズの種類"><span class="legend-item"><span class="swatch"></span>通常の光学要素</span><span class="legend-item"><span class="swatch asph"></span>非球面 ×3</span><span class="legend-item"><span class="swatch sld"></span>SLD ×1</span></div><div class="source-note">光学配置と仕様：<a href="https://www.sigma-global.com/jp/lenses/c021_18_50_28/" target="_blank" rel="noopener noreferrer">SIGMA公式 製品ページ</a>。ズーム時の各群の動きは未公開のため、表示は説明用の模式図です。</div></footer>
+</main>
+<script>/*__BUNDLE__*/</script>
+</body>
+</html>
